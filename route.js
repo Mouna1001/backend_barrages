@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
     //db.raw('select sum(fill_rate) as fill_rate, name, EXTRACT(year from date) as year from barrages  group by name, EXTRACT(YEAR from date);')
      db.select('*')
            .from('barrage2')
-                  
+                   
             .then((data) => {
             console.log(data);
             //res.json(data);
