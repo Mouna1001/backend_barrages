@@ -12,7 +12,7 @@ const db = knex({
     },
 });
 router.get('/', (req, res) => {
-    db.raw('select avg(fill_rate) as fill_rate, avg(reserve) as reserve,avg(normal_capacity) as normal_capacity, name, EXTRACT(year from date) as year from barrage5 group by name, EXTRACT(YEAR from date);')
+    db.raw('select  avg(normal_capacity) as normal_capacity, name, EXTRACT(year from date) as year,EXTRACT(month from date) as month from barraget where EXTRACT(YEAR from date) = '+req.query.year+' and EXTRACT(month from date) = '+req.query.month+' group by name, EXTRACT(YEAR from date),EXTRACT(month from date);')
    
             .then((data) => {
             console.log(data);

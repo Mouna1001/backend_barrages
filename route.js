@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
    //db.raw('select distinct * from barrage2 ;') 
     //db.raw('select sum(fill_rate) as fill_rate, name, EXTRACT(year from date) as year from barrages  group by name, EXTRACT(YEAR from date);')
      db.select('*')
-           .from('barrage5')
+           .from('barraget')
                    
             .then((data) => {
             console.log(data);
